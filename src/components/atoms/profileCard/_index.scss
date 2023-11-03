@@ -1,0 +1,139 @@
+@use '../../../Sass/variables' as *;
+
+.profile-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+  min-width: 300px;
+  align-items: center;
+  background: linear-gradient(140deg, rgba($white, .2) 0%, rgba($contrast-pink, .2) 100%);
+  border-radius: 8px;
+  padding: 4rem;
+  gap: 2rem;
+  justify-content: space-around;
+
+  &__button {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    border: none;
+    opacity: .5;
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+
+    .profile-card__icon {
+      width: 3rem;
+      height: 3rem;
+      color: $white;
+    }
+
+    &:hover {
+      transform: scale(1.3);
+      opacity: 1;
+    }
+  }
+
+  &__img-container {
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+
+    .profile-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__nickname {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 3.6rem;
+  }
+
+  &__biography {
+    text-wrap: balance;
+  }
+
+  &__link {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      font-size: 1.8rem;
+      color: $white;
+    }
+
+    &-icon {
+      color: $contrast-pink;
+    }
+  }
+}
+
+.profile-card__update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  height: 100%;
+
+  .input-file p {
+    text-align: center;
+  }
+  .profile-card__name-input {
+    input {
+      padding: 0 5px;
+      border-radius: 8px;
+      background-color: rgba($white, .2);
+      color: $white;
+      margin-left: 5px;
+      outline-style: none;
+      border: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: 1px solid $contrast-pink;
+        box-shadow: 0 0 2px 4px rgba($contrast-pink, .2);
+      }
+    }
+  }
+
+  .profile-card__biography-input {
+    textarea {
+      margin-top: 5px;
+      font-weight: lighter;
+      padding: 5px;
+      color: $white;
+      resize: none;
+      border-radius: 8px;
+      background-color: rgba($white, .2);
+      outline-style: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        outline: 1px solid $contrast-pink;
+        box-shadow: 0 0 2px 4px rgba($contrast-pink, .2);
+      }
+    }
+  }
+
+  .profile-card__submit-update-btn {
+    color: $white;
+    background-color: $contrast-pink;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+}
